@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Customer, Investment, Stock
 
+
 class CustomerList(admin.ModelAdmin):
     list_display = ('cust_number', 'name', 'city', 'cell_phone')
     list_filter = ('cust_number', 'name', 'city')
