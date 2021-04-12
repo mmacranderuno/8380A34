@@ -26,7 +26,7 @@ SECRET_KEY = 'ta%gk#)x+qel@u=jsfb90j#xg%+d61fqohe*+peezbh$5n_0n('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mmacranderuno.pythonanywhere.com']
+ALLOWED_HOSTS = ['mmacranderuno.pythonanywhere.com', '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -145,6 +145,7 @@ JWT_AUTH = {
 }
 CORS_ORIGIN_WHITELIST = (
     'https://localhost:8080',
-    'https://127.0.0.1:8080'
+    'https://127.0.0.1:8080',
+    'https://mmacrander.pythonanywhere.com'
 )
 CORS_ORIGIN_ALLOW_ALL = True

@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
+
 # Create your models here.
 class Customer(models.Model):
     name = models.CharField(max_length=50)
@@ -23,9 +24,19 @@ class Customer(models.Model):
         self.updated_date = timezone.now()
         self.save()
 
+    def custdisplay(self):
+        init = ''
+        init_looper = 0
+        words = str(self.name).split()
+        for word in words:
+            init += word[0]
+            init_looper += 1
+            if init_looper >= 4:
+                break
+        return str(self.cust_number) + ":" + init
+
     def __str__(self):
         return str(self.cust_number)
-
 
 class Investment(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='investments')
@@ -55,7 +66,7 @@ class Stock(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='stocks')
     symbol = models.CharField(max_length=10)
     name = models.CharField(max_length=50)
-    shares = models.DecimalField (max_digits=10, decimal_places=1)
+    shares = models.DecimalField(max_digits=10, decimal_places=1)
     purchase_price = models.DecimalField(max_digits=10, decimal_places=2)
     purchase_date = models.DateField(default=timezone.now, blank=True, null=True)
 
