@@ -146,6 +146,7 @@ JWT_AUTH = {
 CORS_ORIGIN_WHITELIST = (
     'https://localhost:8080',
     'https://127.0.0.1:8080',
-    'https://mmacrander.pythonanywhere.com'
+    'https://mmacrander.pythonanywhere.com',
+    'https://hungry-joliot-e9205c.netlify.app'
 )
 CORS_ORIGIN_ALLOW_ALL = True
